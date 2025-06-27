@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import com.google.protobuf.gradle.*
 
 plugins {
-    kotlin("jvm") version "2.1.21"
+    kotlin("jvm") version "2.2.0"
     application
     id("java")
     id("idea")
@@ -15,8 +15,8 @@ group = "io.opentelemetry"
 version = "1.0"
 
 
-val grpcVersion = "1.72.0"
-val protobufVersion = "4.31.0"
+val grpcVersion = "1.73.0"
+val protobufVersion = "4.31.1"
 
 
 repositories {
@@ -31,19 +31,19 @@ dependencies {
     testImplementation(kotlin("test"))
     implementation(kotlin("script-runtime"))
     implementation("org.apache.kafka:kafka-clients:4.0.0")
-    implementation("com.google.api.grpc:proto-google-common-protos:2.57.0")
+    implementation("com.google.api.grpc:proto-google-common-protos:2.59.0")
     implementation("io.grpc:grpc-protobuf:${grpcVersion}")
     implementation("io.grpc:grpc-stub:${grpcVersion}")
     implementation("io.grpc:grpc-netty:${grpcVersion}")
     implementation("io.grpc:grpc-services:${grpcVersion}")
-    implementation("io.opentelemetry:opentelemetry-api:1.50.0")
-    implementation("io.opentelemetry:opentelemetry-sdk:1.50.0")
+    implementation("io.opentelemetry:opentelemetry-api:1.51.0")
+    implementation("io.opentelemetry:opentelemetry-sdk:1.51.0")
     implementation("io.opentelemetry:opentelemetry-extension-annotations:1.18.0")
-    implementation("org.apache.logging.log4j:log4j-core:2.24.3")
+    implementation("org.apache.logging.log4j:log4j-core:2.25.0")
     implementation("org.slf4j:slf4j-api:2.0.17")
     implementation("com.google.protobuf:protobuf-kotlin:${protobufVersion}")
     implementation("dev.openfeature:sdk:1.15.1")
-    implementation("dev.openfeature.contrib.providers:flagd:0.11.8")
+    implementation("dev.openfeature.contrib.providers:flagd:0.11.11")
 
     if (JavaVersion.current().isJava9Compatible) {
         // Workaround for @javax.annotation.Generated
